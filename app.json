@@ -1,16 +1,18 @@
 {
   "expo": {
-    "name": "Vibe2ShipApp",
-    "slug": "Vibe2ShipApp",
+    "name": "ChronoPilot",
+    "slug": "ChronoPilot",
+    "scheme": "chronopilot",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "vibe2shipapp",
+    "icon": "./assets/images/Logo.png",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.yutaokkutsu.chronopilot",
+      "minSdkVersion": 24,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -26,17 +28,33 @@
     },
     "plugins": [
       "expo-router",
+      "expo-web-browser",
+      "expo-font",
+      "@react-native-community/datetimepicker",
       [
-        "expo-splash-screen",
+        "expo-notifications",
         {
-          "image": "./assets/images/splash-icon.png",
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "icon": "./assets/images/Logo.png",
+          "color": "#6200EE",
+          "sounds": [
+            "./assets/sounds/siren.wav"
+          ]
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 24
+          }
         }
       ]
     ],
-    "experiments": {
-      "typedRoutes": true
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f076c1a9-7cf3-4ebe-a030-0373877d243a"
+      }
     }
   }
 }
